@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS (Latest Version) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+<!-- Bootstrap JavaScript (Popper.js Included) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+        /* Your existing CSS styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header>div>img {
+            width: 55px;
+            float: left;
+            margin: 2px 15px;
+        }
+
+        .box {
+            display: flow-root;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header>div>h1 {
+            margin-top: 7px;
+            margin-bottom: 0px;
+            color: #00457c;
+            font-weight: bold;
+            font-size: 35px
+        }
+
+        header>div>h3 {
+            margin-top: 1px;
+            font-weight: bold;
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        header>div>ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style: none;
+            margin-top: 0px;
+            margin-right: 0;
+        }
+
+        .imgSocial {
+            display: flex;
+            width: 45px;
+            height: 45px;
+            size: 4px;
+            float: right;
+            margin: 0;
+            padding: 0;
+            margin-top: 0;
+        }
+
+        .Redbox {
+            border: 1px solid rgb(122, 1, 1);
+            height: 25px;
+           background-color: rgb(190 14 35);
+            margin-left: 0;
+        }
+
+        .Bluebox {
+            border: 1px solid #124d83;
+            height: 40px;
+            background-color: #124d83;
+            margin-left: 0;
+        }
+
+      /*  .main {
+            display:grid;
+            justify-self: center;
+            margin-top: 40px;
+            width: 1100px;
+            height: 1000px;
+            box-shadow: 1px 3px 6px rgb(189, 189, 189);
+        }*/
+        
+        
+        .main {
+    width: 1100px;
+     justify-self: center;
+    min-height: 500px;  /* Set a minimum height */
+    /* Remove the fixed height: */
+    /* height: 1525px; */
+    box-shadow: 1px 3px 6px rgb(189, 189, 189);
+    flex-grow: 1;
+}
+ /*.main{
+   /* display: flex;
+    justify-self: center;
+    margin-top: 14px;
+  width: 1100px;
+    min-height: 500px;  Set a minimum height instead of fixed 
+    box-shadow: 1px 3px 6px rgb(189, 189, 189);
+    flex-grow: 1;
+    height: 1525px;
+    
+}*/
+        
+
+        .mainmini {
+            display: flex;
+            background-color: rgb(247, 247, 247);
+            height: 40px;
+            width: 1100px;
+            font-size: larger;
+            box-shadow: 1px 1px 1px #e0e0e0;
+        }
+
+        #nav {
+       width: 1361px;
+    padding: 1px;
+            margin:4px;
+        }
+
+        footer {
+            display: flex;
+            width: 1035px;
+            justify-self: center;
+            background-color: rgb(211, 211, 211);
+            margin: 20px;
+            padding: 10px;
+        }
+
+        footer>div>div>div>h4>div>ul {
+            list-style: none;
+            justify-content: space-between;
+        }
+
+        .infocolomn {
+            list-style: none;
+            justify-content: space-between;
+        }
+
+        #nav1 {
+            display: flex;
+            list-style: none;
+            color: white;
+            gap: 15px;
+            text-decoration: none;
+            align-items: end;
+            align-self: flex-end;
+            justify-content: right;
+            margin-right: 10px;
+            margin-bottom: 2px;
+        }
+
+        /* Popup CSS styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .popup-btn {
+            margin-top: 10px;
+        }
+
+        .popup-form input {
+            margin: 10px 0;
+        }
+
+        .main-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.event-card {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.event-image {
+    width: 100%;
+    height: 465px;
+     object-fit: cover;
+     border-radius: 8px;
+     margin-top: -33px;
+     margin-left: -119px;
+     
+}
+
+.details-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.details-btn:hover {
+    background: #0056b3;
+}
+
+    .inforow1{
+    display:flex;
+    }
+    
+     .add{
+   align-items:center;
+   margin-left: 11px;
+   margin-right:-42;
+   }
+   
+   .row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates a 2x2 grid */
+    gap: 20px; /* Space between grid items */
+    justify-content: center;
+    margin-top: 20px;
+ 
+}  
+   
+    /*  .Bluebox {
+            background: blue;
+            padding: 10px;
+            color: white;
+        }*/
+        #profilePopup {
+            display: none;
+            position: absolute;
+             bottom: 528px;
+             right: 58px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        #logoutButton {
+            margin-top: 5px;
+            cursor: pointer;
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px;
+        }
+    
+      .slider-container {
+    width:1374px;
+    height: 442px;
+    overflow: hidden;
+    position: relative;
+    object-fit: contain;
+   left: 1px;
+    top: 0px;
+    /* border: black; */
+    box-sizing: -4px;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0%;
+     height: 78px;
+ }
+
+.slider-image {
+  
+    width: 682px;
+    height: 82%;
+    object-fit: cover;
+    margin-left: -8px;
+    margin-right: 373px;
+    margin-bottom: -98px;
+    object-fit: contain;
+    top: -53px;
+    bottom: -4px;
+    margin-top: 142px;
+    }
+      .event-container {
+    text-align: center; /* Center align the heading */
+    display: flex;
+    flex-direction: column; /* Stack heading and divs vertically */
+    align-items: center; /* Center horizontally */
+  
+   margin-right: -50px;
+   margin-left: 0;  /* Remove negative margin */
+    margin-top: 20px;
+   
+    width: 1286px;
+}
+
+.h3-1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 203px; /* Adds space between heading and boxes */
+}
+
+    .event-box .event-details {
+    flex: 1;
+    padding: 0 20px;
+    bottom: 10px;
+    margin-top: 6px;
+}
+
+/* Two boxes side by side */
+.event-box-container {
+    display: flex;
+    justify-content: center; /* Center the boxes */
+    gap: 20px; /* Space between the boxes */
+  width: 40%;
+    margin-top: -10px;
+    margin-right: 194px
+}
+
+.intercollegiate {
+            background-color: #0c0c964d;
+}
+
+/* Background colors */
+.intercollegiate:hover {
+            transform: scale(1.1);
+            filter: none;
+            z-index: 2; 
+            background-color: #0c0c964d;
+}
+
+.inhouse {
+   background-color: #0c0c964d;
+}  
+
+  .inhouse:hover {
+            transform: scale(1.1);
+            filter: none;
+            z-index: 2; 
+            background-color: #0c0c964d;
+}
+
+/* When in viewport, apply this class */
+.event-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}     
+        
+        
+  h2 {
+    color: white;
+    margin-top: -42px;
+    margin-left: 25px;/* Adjust this if necessary */
+}
+ 
+ .right-layout .event-details
+    { 
+  order: 1;
+   padding-right: 463px;
+   }
+   
+   #mainbox {
+  width: 1100px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.2);
+  height: auto;  /* Allow the height to adjust based on content */
+  overflow: auto; /* Helps contain floated/absolutely positioned children */
+}   
+
+    /* Ensure the event box is a flex container */
+.event-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;  /* Adjust this as needed */
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Fixed width for the image container */
+.event-image {
+  /* Increase the container dimensions */
+  flex: 0 0 300px;       /* Fixed width */
+  width: 300px;
+  height: 200px;         /* Fixed height */
+  overflow: hidden;
+  margin-right: 15px;    /* Adjust to bring image closer to text */
+  
+  /* Center the image in the container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;      /* Optional: background to fill empty space */
+}
+
+/* Let the details container expand to take up the remaining space */
+.event-details {
+  flex: 1;            /* Grows to fill available space */
+  padding: 0 20px;    /* Add horizontal padding */
+  box-sizing: border-box;
+}
+
+/* Alternating layout orders */
+.right-layout .event-details {
+  order: 1;
+}
+.right-layout .event-image {
+  order: 2;
+}
+.left-layout .event-image {
+  order: 1;
+}
+.left-layout .event-details {
+  order: 2;
+}
+.left-layout .event-image {
+  margin-left: 10px;     /* Add margin for left layout images */
+}
+
+/* Image styling remains the same */
+.event-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;   /* Ensures the image fits entirely without cropping */
+}
+    
+/* Modal overlay */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8); /* Semi-transparent background */
+}
+
+/* Modal image */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+/* Caption text */
+#caption {
+  margin: 10px auto;
+  text-align: center;
+  color: #ccc;
+  width: 80%;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 30px;
+  right: 45px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Download button styling */
+.download-btn {
+  display: block;
+  width: 150px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.download-btn:hover {
+  background-color: #0056b3;
+}
+  /*    .event-box {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+.right-layout .event-details {
+    order: 1;
+    padding-right: 20px;
+}
+.right-layout .event-image {
+    order: 2;
+}
+.left-layout .event-image {
+    order: 1;
+}
+.left-layout .event-details {
+    order: 2;
+    padding-left: 20px;
+}
+.event-image img {
+    width: 200px;
+    border-radius: 8px;
+}
+.btn.btn-primary {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+      
+   .event-details {
+  flex: 1;          /* Expand to fill available space 
+  max-width: 600px;  /* Allow up to 600px width 
+  padding: 0 20px;
+  margin: 0;
+}*/
+
+    </style>
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Fetch username from SessionServlet
+            fetch("SessionServlet")
+                .then(response => response.text())
+                .then(username => {
+                    if (username !== "null") {
+                        document.getElementById("welcomeMessage").innerText = "Welcome, " + username;
+                        document.getElementById("profileName").innerText = username;
+                    }
+                });
+
+            // Show profile popup
+            document.getElementById("profileButton").addEventListener("click", function () {
+                let profilePopup = document.getElementById("profilePopup");
+                profilePopup.style.display = (profilePopup.style.display === "block") ? "none" : "block";
+            });
+
+            // Logout function
+            document.getElementById("logoutButton").addEventListener("click", function () {
+                window.location.href = "LogoutServlet"; // Redirects to logout servlet
+            });
+        });
+        
+       
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            const type = params.get("type"); // Intercollegiate/In-House
+            const category = params.get("category"); // Technical/Sports/etc.
+            const department = params.get("department"); // Degree/Junior
+
+            let fetchUrl = "Fetch_Events_In_Events";
+            let queryParams = [];
+
+            if (type) queryParams.push("type=" + encodeURIComponent(type));
+            if (category) queryParams.push("category=" + encodeURIComponent(category));
+            if (department) queryParams.push("department=" + encodeURIComponent(department));
+
+            if (queryParams.length > 0) {
+                fetchUrl += "?" + queryParams.join("&");
+            }
+
+            console.log("Fetching events from:", fetchUrl); // ✅ Debugging log
+
+            fetch(fetchUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("HTTP error! Status: " + response.status);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    console.log("Fetched data:", data); // ✅ Debugging log
+                    const mainbox = document.getElementById("mainbox");
+                    if (mainbox) {
+                        mainbox.innerHTML = data;
+                    } else {
+                        console.error("Error: 'mainbox' div not found!");
+                    }
+                })
+                .catch(error => console.error("Error fetching events:", error));
+        });
+
+    
+
+
+
+        function initializeZoom() {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            const captionText = document.getElementById("caption");
+            const downloadLink = document.getElementById("downloadLink");
+
+            const zoomableImages = document.querySelectorAll(".zoomable");
+            zoomableImages.forEach(img => {
+                img.addEventListener("click", function () {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    captionText.innerHTML = this.alt;
+                    downloadLink.href = this.src;
+                });
+            });
+
+            document.getElementsByClassName("close")[0].addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            modal.addEventListener("click", function (e) {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</head>
+
+<body>
+    <header>
+        <div class="box">
+            <img src="logo1.png" alt="">
+            <h1>St. Mira's College For Girls, Pune</h1>
+            <br>
+            <h3>Autonomous - Affiliated to Savitribai Phule Pune University * <small
+                    style="font-weight: 100;font-size:smaller;">Undertaking</small></h3>
+        </div>
+        <div class="social">
+            <ul>
+                <li><img class="imgSocial" src="64-641423_blue-phone-logo-png-transparent-blue-phone-icon.png" alt="">
+                </li>
+                <li><img class="imgSocial" src="Logo_of_Twitter.svg.png" alt=""></li>
+                <li><img class="imgSocial" src="instagram-logo-instagram-icon-transparent-free-png.webp" alt=""></li>
+                <li><img class="imgSocial" src="aaw6si4mt.webp" alt=""></li>
+                <li><img class="imgSocial"
+                        src="red-circle-bordered-youtube-logo-with-long-shadow-on-transparent-background-free-png.webp"
+                        alt=""></li>
+            </ul>
+        </div>
+         
+    </header>
+    <div class="Redbox"></div>
+    <div class="Bluebox">
+    
+        
+        <nav>
+            <ul id="nav1">
+                <li><a href="#" style="color: white;">Home</a></li>
+                <li><button id="loginButton"
+                        style="color: white; background: none; border: none; cursor: pointer;">Login</button></li>
+                         <li>
+                    <button id="profileButton" style="color: white; background: none; border: none; cursor: pointer;">
+                        Profile
+                    </button>
+                </li>
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="facultyDropdown" role="button" data-bs-toggle="dropdown">
+                        Faculty
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Degree</a></li>
+                        <li><a class="dropdown-item" href="#">Junior</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" style="color: white;">About Us</a></li>
+            </ul>
+        </nav>
+      
+    </div>
+    <main>
+         <h2 id="welcomeMessage">Welcome, User</h2><!--  Will be updated dynamically -->
+
+    <!-- Profile Sidebar -->
+    <div id="profilePopup">
+        <p>User: <span id="profileName"></span></p>
+        <button id="logoutButton">Logout</button>
+    </div>
+            <div class="main">
+                <div class="mainmini">
+                    <nav id="nav">Seminar Hall Booking System</nav>
+                </div>
+                <div id=mainbox>
+          <div id="events-container"></div>
+          
+         
+            </div>
+          <div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImage">
+  <div id="caption"></div>
+  <a id="downloadLink" class="download-btn" href="#" download>Download</a>
+</div>
+            </div>
+    </main>
+    <footer>
+        <div class="info">
+            <div class="row">
+                <div class="inforow1">
+                   
+                    <div class="items">
+                     <h4>Quick Links</h4>
+                        <ul>
+                            <li>Home</li>
+                            <li>About Us</li>
+                            <li>Courses</li>
+                            <li>Admission</li>
+                            <li>Examination</li>
+                            <li>College In News</li>
+                            <li>Latest Update</li>
+                        </ul>
+                    </div>
+                    <div class="colomn">
+                        <div class="infocolomn">
+                        <br>
+                        <br>
+                            <ul>
+                                <li>Faculty</li>
+                                <li>College Activities</li>
+                                <li>Alumini</li>
+                                <li>Photo Gallery</li>
+                                <li>Video Galeery</li>
+                                <li>Contact Us</li>
+                                <li>Upcoming Events</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="add">
+                        <h3>Address</h3>
+                        <p>St. Mira's College for Girls
+                            <br>6, Koregaon Road,
+                            <br> Pune - 411001
+                        </p>
+                        <h3>Contact Detials</h3>
+                        020 2612 4846
+                        <h3>Email Id</h3>
+                        <p>mira_college@yahoo.co.in
+                            info@stmirascollegepune.edu.in
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup HTML -->
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <button class="close-btn">&times;</button>
+            <h2>Login</h2>
+            <form class="popup-form" action="LoginServlet" method="post">
+                <input type="text" placeholder="Username" name="username" required>
+                <br>
+                <input type="password" placeholder="Password" name="password" required>
+                <br>
+                <button class="popup-btn" type="submit" value="login" name="login">Login</button>
+                <button class="popup-btn" type="submit" value="sign-up" name="signup">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>

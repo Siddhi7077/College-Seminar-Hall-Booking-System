@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS (Latest Version) -->
+<!-- Bootstrap CSS (Already included, but double-check) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Bundle with Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+
+    <style>
+        /* Your existing CSS styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header>div>img {
+            width: 55px;
+            float: left;
+            margin: 2px 15px;
+        }
+
+        .box {
+            display: flow-root;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header>div>h1 {
+            margin-top: 7px;
+            margin-bottom: 0px;
+            color: #00457c;
+            font-weight: bold;
+            font-size: 35px
+        }
+
+        header>div>h3 {
+            margin-top: 1px;
+            font-weight: bold;
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        header>div>ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style: none;
+            margin-top: 0px;
+            margin-right: 0;
+        }
+
+        .imgSocial {
+            display: flex;
+            width: 45px;
+            height: 45px;
+            size: 4px;
+            float: right;
+            margin: 0;
+            padding: 0;
+            margin-top: 0;
+        }
+
+        .Redbox {
+            border: 1px solid rgb(122, 1, 1);
+            height: 25px;
+           background-color: rgb(190 14 35);
+            margin-left: 0;
+        }
+
+        .Bluebox {
+            border: 1px solid #124d83;
+            height: 40px;
+            background-color: #124d83;
+            margin-left: 0;
+        }
+
+      /*  .main {
+            display:grid;
+            justify-self: center;
+            margin-top: 40px;
+            width: 1100px;
+            height: 1000px;
+            box-shadow: 1px 3px 6px rgb(189, 189, 189);
+        }*/
+        
+        .main {
+   /* display: flex;*/
+    justify-self: center;
+    margin-top: 14px;
+  width: 1100px;
+    min-height: 500px; /* Set a minimum height instead of fixed */
+    box-shadow: 1px 3px 6px rgb(189, 189, 189);
+    flex-grow: 1;
+    height: 1525px;
+    
+}
+        
+
+        .mainmini {
+            display: flex;
+            background-color: rgb(247, 247, 247);
+            height: 40px;
+            width: 1100px;
+            font-size: larger;
+            box-shadow: 1px 1px 1px #e0e0e0;
+        }
+
+        #nav {
+       width: 1361px;
+    padding: 1px;
+            margin:4px;
+        }
+
+        footer {
+            display: flex;
+            width: 1035px;
+            justify-self: center;
+            background-color: rgb(211, 211, 211);
+            margin: 20px;
+            padding: 10px;
+        }
+
+        footer>div>div>div>h4>div>ul {
+            list-style: none;
+            justify-content: space-between;
+        }
+
+        .infocolomn {
+            list-style: none;
+            justify-content: space-between;
+        }
+
+        #nav1 {
+            display: flex;
+            list-style: none;
+            color: white;
+            gap: 15px;
+            text-decoration: none;
+            align-items: end;
+            align-self: flex-end;
+            justify-content: right;
+            margin-right: 10px;
+            margin-bottom: 2px;
+        }
+
+        /* Popup CSS styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .popup-btn {
+            margin-top: 10px;
+        }
+
+        .popup-form input {
+            margin: 10px 0;
+        }
+
+        .main-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.event-card {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.event-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.details-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.details-btn:hover {
+    background: #0056b3;
+}
+
+    .inforow1{
+    display:flex;
+    }
+    
+     .add{
+   align-items:center;
+   margin-left: 11px;
+   margin-right:-42;
+   }
+   
+   .row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates a 2x2 grid */
+    gap: 20px; /* Space between grid items */
+    justify-content: center;
+    margin-top: 20px;
+ 
+}  
+   
+    /*  .Bluebox {
+            background: blue;
+            padding: 10px;
+            color: white;
+        }*/
+        #profilePopup {
+        
+    display: none;
+    position: absolute;
+    bottom: 528px;
+    right: 161px;
+    background: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    z-index: 10;
+        }
+        
+        #logoutButton {
+            margin-top: 5px;
+            cursor: pointer;
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px;
+        }
+    
+      .slider-container {
+    width:1374px;
+    height: 442px;
+    overflow: hidden;
+    position: relative;
+    object-fit: contain;
+   left: 1px;
+    top: 0px;
+    /* border: black; */
+    box-sizing: -4px;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0%;
+     height: 78px;
+ }
+
+.slider-image {
+  
+    width: 682px;
+    height: 82%;
+    object-fit: cover;
+    margin-left: -8px;
+    margin-right: 373px;
+    margin-bottom: -98px;
+    object-fit: contain;
+    top: -53px;
+    bottom: -4px;
+    margin-top: 142px;
+    }
+      .event-container {
+    text-align: center; /* Center align the heading */
+    display: flex;
+    flex-direction: column; /* Stack heading and divs vertically */
+    align-items: center; /* Center horizontally */
+  
+   margin-right: -50px;
+   margin-left: 0;  /* Remove negative margin */
+    margin-top: 20px;
+   
+    width: 1286px;
+}
+
+.h3-1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 203px; /* Adds space between heading and boxes */
+}
+
+event-box {
+    width: 45%;
+    height: 150px;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin: 10px; /* Space between boxes */
+
+    /* Scroll animation (initial state) */
+ /*  opacity: 0;*/
+ 
+    transform: translateY(6px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+
+
+.event-box-container {
+    display: flex;
+    justify-content: center; /* Center the boxes */
+    gap: 20px; /* Space between the boxes */
+  width: 40%;
+    margin-top: 13px;
+   margin-right: 198px;
+}
+
+.intercollegiate {
+            background-color: #0c0c964d;
+            height: 77px;
+    width: 221px;
+}
+
+/* Background colors */
+.intercollegiate:hover {
+            transform: scale(1.1);
+            filter: none;
+            z-index: 2; 
+            background-color: #0c0c964d;
+}
+
+.inhouse {
+   background-color: #0c0c964d;
+    height: 77px;
+    width: 221px;
+}  
+
+  .inhouse:hover {
+            transform: scale(1.1);
+            filter: none;
+            z-index: 2; 
+            background-color: #0c0c964d;
+}
+
+/* When in viewport, apply this class */
+.event-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}     
+
+        
+        
+ 
+ 
+ 
+ .carousel-container {
+  margin: 400px auto 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+.event-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.event-item {
+    width: 200px;
+    height: 300px;
+    text-align: center;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+    opacity: 0.5; /* Default blur effect */
+}
+
+.event-item img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.event-item h5 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.event-item .btn {
+    margin-top: 10px;
+}
+
+/* Highlight the center event */
+.event-item.active {
+    transform: scale(1.2);
+    opacity: 1;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Hide the fourth image smoothly */
+/*.carousel-img.hidden {
+    display: none;  /* Completely removes it from layout 
+ }*/
+
+
+        
+        #eventList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 15px;
+    margin-left: 0;
+    margin-top: 45px;
+    margin-right: 3px;
+} 
+    .event-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+    h2 {
+    color: white;
+    margin-top: -42px;
+    margin-left: 25px;/* Adjust this if necessary */
+}
+     .h2-1 {
+     color: black;
+     margin-left: -2493px;
+    margin-top: 99px;
+   /* Adjust this if necessary */
+}
+     
+       .row-below{
+   background-color: rgb(137 132 166);
+   height: 152px;
+   display:flex;
+    margin-top:82px;
+    margin-left: 112px;
+   }
+    
+    
+    .logo-img{
+      border-radius: 532px;
+    margin: 9px;
+    margin-left: 34px;
+    padding: 7px;
+    height: 100px;
+    width: 101px;
+    border: 4px solid white;
+    
+    }
+    
+    
+    .logo-text{
+    color:white;
+    margin-left: 43px;
+    }
+    
+    
+    .gallery-sc{
+    display:flex ;
+    }
+   /* Carousel container */
+    .carousel-container {
+   
+       border: 1px solid #ccc;
+      position: relative;
+    width: 800px;
+    height: 336px;
+    margin: -2px auto;
+    overflow: hidden;
+    }
+    /* background: #f9f9f9; */
+    /* border: 1px solid #ccc;
+    }
+    /* Each event card (carousel image) */
+    .carousel-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 200px; /* Adjust card width as needed */
+      transform: translate(-50%, -50%);
+      text-align: center;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      opacity: 0.5;
+      z-index: 1;
+    }
+    /* Image styling */
+    .carousel-img img {
+     width: 200px;        /* Set a fixed width */
+  height: 150px;       /* Set a fixed height */
+  object-fit: contain;
+      width: 100%;
+      border-radius: 8px;
+      filter: blur(3px);
+      transition: filter 0.5s ease;
+    }
+    /* Event title and button styling */
+    .carousel-img h5 {
+      margin: 8px 0;
+      font-size: 1.1em;
+    }
+    .carousel-img .btn {
+      padding: 6px 10px;
+      background-color: #007bff;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .carousel-img .btn:hover {
+      background-color: #0056b3;
+    }
+    /* Active (center) card */
+    .carousel-img.active {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+      z-index: 2;
+    }
+    .carousel-img.active img {
+      filter: blur(0);
+    }
+    /* Left card */
+    .carousel-img.left {
+      transform: translate(calc(-50% - 250px), -50%) scale(0.8);
+      opacity: 0.5;
+      z-index: 1;
+    }
+    /* Right card */
+    .carousel-img.right {
+      transform: translate(calc(-50% + 250px), -50%) scale(0.8);
+      opacity: 0.5;
+      z-index: 1;
+    }
+    /* Optional: Styling for the upcoming events section */
+    .Upcoming-event {
+      margin-top: 50px;
+      text-align: center;
+    }
+    .Upcoming-event h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    
+    #eventGrid {
+    display: none;
+}
+      
+      
+      .nav-item .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    list-style: none;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Show dropdown when hovering over the nav item */
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+      
+      .screen {
+    width: 100%;
+    background: gray;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.seat-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Space between left and right seats */
+}
+
+.left-side, .right-side {
+    display: grid;
+    grid-template-columns: repeat(5, 40px); /* 5 seats per row */
+    gap: 10px;
+}
+
+.seat {
+    width: 40px;
+    height: 40px;
+    background: green;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.seat:hover {
+    background: darkgreen;
+}
+
+        #bookingPopup { display: none; position: fixed; top: 30%; left: 40%; background: white; padding: 20px; border: 1px solid black; }
+         #seatContainer {
+            text-align: center;
+            margin: 20px;
+        }
+        table {
+            margin: auto;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+        }
+    
+        
+    </style>
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Fetch username from SessionServlet
+            fetch("SessionServlet")
+                .then(response => response.text())
+                .then(username => {
+                    if (username !== "null") {
+                        document.getElementById("welcomeMessage").innerText = "Welcome, " + username;
+                        document.getElementById("profileName").innerText = username;
+                    }
+                });
+
+            // Show profile popup
+            document.getElementById("profileButton").addEventListener("click", function () {
+                let profilePopup = document.getElementById("profilePopup");
+                profilePopup.style.display = (profilePopup.style.display === "block") ? "none" : "block";
+            });
+
+            // Logout function
+            document.getElementById("logoutButton").addEventListener("click", function () {
+                window.location.href = "LogoutServlet"; // Redirects to logout servlet
+            });
+        });
+        
+        let urlParams = new URLSearchParams(window.location.search);
+        let aid = urlParams.get("aid");
+        document.getElementById("eventId").value = aid;
+
+        function fetchSeats() {
+            fetch("GetSeatsServlet?aid=" + aid)
+                .then(response => response.text())
+                .then(data => document.getElementById("seatContainer").innerHTML = data)
+                .catch(error => console.error("Error fetching seat data:", error));
+        }
+
+        function openBookingPopup(seatNumber) {
+            document.getElementById("seatNumber").value = seatNumber;
+            document.getElementById("bookingPopup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("bookingPopup").style.display = "none";
+        }
+
+        fetchSeats();
+
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</head>
+
+<body>
+    <header>
+        <div class="box">
+            <img src="logo1.png" alt="">
+            <h1>St. Mira's College For Girls, Pune</h1>
+            <br>
+            <h3>Autonomous - Affiliated to Savitribai Phule Pune University * <small
+                    style="font-weight: 100;font-size:smaller;">Undertaking</small></h3>
+        </div>
+        <div class="social">
+            <ul>
+                <li><img class="imgSocial" src="64-641423_blue-phone-logo-png-transparent-blue-phone-icon.png" alt="">
+                </li>
+                <li><img class="imgSocial" src="Logo_of_Twitter.svg.png" alt=""></li>
+                <li><img class="imgSocial" src="instagram-logo-instagram-icon-transparent-free-png.webp" alt=""></li>
+                <li><img class="imgSocial" src="aaw6si4mt.webp" alt=""></li>
+                <li><img class="imgSocial"
+                        src="red-circle-bordered-youtube-logo-with-long-shadow-on-transparent-background-free-png.webp"
+                        alt=""></li>
+            </ul>
+        </div>
+         
+    </header>
+    <div class="Redbox"></div>
+    <div class="Bluebox">
+    
+        
+     <nav>
+    <ul id="nav1">
+        <li><a href="#" style="color: white;">Home</a></li>
+        <li>
+            <button id="loginButton" style="color: white; background: none; border: none; cursor: pointer;">Login</button>
+        </li>
+        <li>
+            <button id="profileButton" style="color: white; background: none; border: none; cursor: pointer;">
+                Profile
+            </button>
+        </li>
+        
+ <li class="nav-item dropdown">
+    <a href="#" class="nav-link">Faculty ▼</a>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" onclick="redirectToEventsByDepartment('Degree')">Degree</a></li>
+        <li><a class="dropdown-item" onclick="redirectToEventsByDepartment('Junior')">Junior</a></li>
+    </ul>
+</li>
+        <li><a href="#" style="color: white;">About Us</a></li>
+    </ul>
+</nav>
+
+      
+    </div>
+    <main>
+         <h2 id="welcomeMessage">Welcome, User</h2><!--  Will be updated dynamically -->
+
+    <!-- Profile Sidebar -->
+    <div id="profilePopup">
+        <p>User: <span id="profileName"></span></p>
+        <button id="logoutButton">Logout</button>
+    </div>
+            <div class="main">
+                <div class="mainmini">
+                    <nav id="nav">Seminar Hall Booking System</nav>
+                </div>
+                <div id=mainbox>
+              <h2>Book Your Seat</h2>
+    <h2>Seat Selection</h2>
+<div id="seatContainer">Loading seats...</div>
+
+<!-- Popup Form -->
+<div id="bookingPopup" style="display:none; position: fixed; top: 30%; left: 40%; padding: 20px; border: 1px solid black; background: white;">
+    <h3>Book Your Seat</h3>
+    <form action="BookTicketServlet" method="post">
+        <input type="hidden" name="event_id" id="eventId">
+        <input type="hidden" name="seat_number" id="seatNumber">
+        
+        <label>Full Name: <input type="text" name="full_name" required></label><br>
+        <label>Department: <input type="text" name="department" required></label><br>
+        <label>Class: <input type="text" name="class" required></label><br>
+        <label>Roll Number: <input type="text" name="roll_number" required></label><br>
+        <label>Contact Number: <input type="text" name="contact_number" required></label><br>
+        <label>Email: <input type="email" name="email_id" required></label><br>
+        
+        <button type="submit">Confirm Booking</button>
+        <button type="button" onclick="closePopup()">Cancel</button>
+    </form>
+</div>
+              
+    
+             </div>  
+             </div> 
+       
+        
+    </main>
+    <footer>
+        <div class="info">
+            <div class="row">
+                <div class="inforow1">
+                   
+                    <div class="items">
+                     <h4>Quick Links</h4>
+                        <ul>
+                            <li>Home</li>
+                            <li>About Us</li>
+                            <li>Courses</li>
+                            <li>Admission</li>
+                            <li>Examination</li>
+                            <li>College In News</li>
+                            <li>Latest Update</li>
+                        </ul>
+                    </div>
+                    <div class="colomn">
+                        <div class="infocolomn">
+                        <br>
+                        <br>
+                            <ul>
+                                <li>Faculty</li>
+                                <li>College Activities</li>
+                                <li>Alumini</li>
+                                <li>Photo Gallery</li>
+                                <li>Video Galeery</li>
+                                <li>Contact Us</li>
+                                <li>Upcoming Events</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="add">
+                        <h3>Address</h3>
+                        <p>St. Mira's College for Girls
+                            <br>6, Koregaon Road,
+                            <br> Pune - 411001
+                        </p>
+                        <h3>Contact Detials</h3>
+                        020 2612 4846
+                        <h3>Email Id</h3>
+                        <p>mira_college@yahoo.co.in
+                            info@stmirascollegepune.edu.in
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup HTML -->
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <button class="close-btn">&times;</button>
+            <h2>Login</h2>
+            <form class="popup-form" action="LoginServlet" method="post">
+                <input type="text" placeholder="Username" name="username" required>
+                <br>
+                <input type="password" placeholder="Password" name="password" required>
+                <br>
+                <button class="popup-btn" type="submit" value="login" name="login">Login</button>
+                <button class="popup-btn" type="submit" value="sign-up" name="signup">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    
+
+    
+</body>
+
+</html>

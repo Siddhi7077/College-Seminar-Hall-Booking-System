@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header>div>img {
+
+            width: 55px;
+            float: left;
+            margin: 2px 15px;
+        }
+
+        .box {
+            display: flow-root;
+            /* color: rgb(76, 76, 203); */
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header>div>h1 {
+            margin-top: 7px;
+            margin-bottom: 0px;
+            color: #00457c;
+            font-weight: bold;
+            font-size: 35px
+        }
+
+        header>div>h3 {
+            margin-top: 1px;
+            font-weight: bold;
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        header>div>ul {
+            /* width: 45px;
+            height: 45px; */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            /* display: inline; */
+            list-style: none;
+            margin-top: 0px;
+            margin-right: 0;
+        }
+
+        .imgSocial {
+            display: flex;
+            width: 45px;
+            height: 45px;
+            size: 4px;
+            float: right;
+            margin: 0;
+            padding: 0;
+            margin-top: 0;
+        }
+
+        .Redbox {
+            border: 1px solid rgb(122, 1, 1);
+            height: 25px;
+            background-color: rgb(122, 1, 1);
+            margin-left: 0;
+        }
+
+        .Bluebox {
+            border: 1px solid #124d83;
+            height: 40px;
+            background-color: #124d83;
+            margin-left: 0;
+        }
+
+        .main {
+            display: flex;
+            justify-self: center;
+            margin-top: 40px;
+            width: 1100px;
+            height: 1000px;
+            /* border: 1px solid black; */
+            box-shadow: 1px 3px 6px rgb(189, 189, 189);
+        }
+
+        .mainmini {
+            display: flex;
+            background-color: rgb(247, 247, 247);
+            height: 40px;
+            /* border: 1px solid black;
+            border-top: 1px solid white; */
+            width: 1100px;
+            font-size: larger;
+            box-shadow: 1px 1px 1px #e0e0e0;
+        }
+        #nav{
+            padding: 7px;
+            margin: 4px;
+        }
+        footer{
+            display: flex;
+            width: 1035px;
+            justify-self: center;
+            background-color: rgb(211, 211, 211);
+            margin: 20px;
+            padding: 10px;
+        }
+        footer>div>div>div>h4>div>ul{
+            list-style: none;
+            justify-content: space-between;
+        }
+        .infocolomn {
+            list-style: none;
+            justify-content: space-between;
+        }
+        #nav1{
+           display: flex;
+           /* display: inline; */
+           list-style: none;
+            color: white;
+            gap: 15px;
+            text-decoration: none;
+            align-items: end;
+            align-self: flex-end;
+            justify-content: right;
+            margin-right: 10px;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="box">
+            <img src="logo1.png" alt="">
+            <h1>St. Mira's College For Girls, Pune</h1>
+            <br>
+            <h3>Autonomous - Affiliated to Savitribai Phule Pune University * <small
+                    style="font-weight: 100;font-size:smaller;">Undertaking</small></h3>
+        </div>
+        <div class="social">
+            <ul>
+                <li><img class="imgSocial" src="64-641423_blue-phone-logo-png-transparent-blue-phone-icon.png" alt="">
+                </li>
+                <li><img class="imgSocial" src="Logo_of_Twitter.svg.png" alt=""></li>
+                <li><img class="imgSocial" src="instagram-logo-instagram-icon-transparent-free-png.webp" alt=""></li>
+                <li><img class="imgSocial" src="aaw6si4mt.webp" alt=""></li>
+                <li><img class="imgSocial"
+                        src="red-circle-bordered-youtube-logo-with-long-shadow-on-transparent-background-free-png.webp"
+                        alt=""></li>
+            </ul>
+        </div>
+    </header>
+    <div class="Redbox"></div>
+    <div class="Bluebox">
+        <nav>
+            <ul id="nav1">
+                <li><a href="#" style="color: white;">Home</a></li>
+                <li><a href="Us_Pas.html" style="color: white;">Login</a></li>
+                <li><a href="#" style="color: white;">About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <div class="main">
+            <div class="mainmini">
+                <nav id="nav">Home/Notice</nav>
+            </div>
+            <div class="mainbox"></div>
+        </div>
+    </main>
+    <footer>
+        <div class="info">
+            <div class="row">
+                <div class="inforow">
+                    <h4>Quick Links</h4>
+                    <div class="items">
+                        <ul>
+                            <li>Home</li>
+                            <li>About Us</li>
+                            <li>Courses</li>
+                            <li>Admission</li>
+                            <li>Examination</li>
+                            <li>College In News</li>
+                            <li>Latest Update</li>
+                        </ul>
+                    </div>
+                    <div class="colomn">
+                        <div class="infocolomn">
+                            <ul>
+                                <li>Faculty</li>
+                                <li>College Activities</li>
+                                <li>Alumini</li>
+                                <li>Photo Gallery</li>
+                                <li>Video Galeery</li>
+                                <li>Contact Us</li>
+                                <li>Upcoming Events</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="add">
+                        <h3>Address</h3>
+                        <p>St. Mira's College for Girls
+                          <br>  6, Koregaon Road,
+                           <br> Pune - 411001</p>
+                        <h3>Contact Detials</h3>
+                        <br>
+                        020 2612 4846
+                        <h3>Email Id</h3>
+                        <p>mira_college@yahoo.co.in
+                            <br>info@stmirascollegepune.edu.in</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Your existing CSS styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header>div>img {
+            width: 55px;
+            float: left;
+            margin: 2px 15px;
+        }
+
+        .box {
+            display: flow-root;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header>div>h1 {
+            margin-top: 7px;
+            margin-bottom: 0px;
+            color: #00457c;
+            font-weight: bold;
+            font-size: 35px
+        }
+
+        header>div>h3 {
+            margin-top: 1px;
+            font-weight: bold;
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        header>div>ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style: none;
+            margin-top: 0px;
+            margin-right: 0;
+        }
+
+        .imgSocial {
+            display: flex;
+            width: 45px;
+            height: 45px;
+            size: 4px;
+            float: right;
+            margin: 0;
+            padding: 0;
+            margin-top: 0;
+        }
+
+        .Redbox {
+            border: 1px solid rgb(122, 1, 1);
+            height: 25px;
+            background-color: rgb(122, 1, 1);
+            margin-left: 0;
+        }
+
+        .Bluebox {
+            border: 1px solid #124d83;
+            height: 40px;
+            background-color: #124d83;
+            margin-left: 0;
+        }
+
+        .main {
+            display: flex;
+            justify-self: center;
+            margin-top: 40px;
+            width: 1100px;
+            height: 1000px;
+            box-shadow: 1px 3px 6px rgb(189, 189, 189);
+            flex-grow :1;
+        }
+
+        .mainmini {
+            display: flex;
+            background-color: rgb(247, 247, 247);
+            height: 40px;
+            width: 1100px;
+            font-size: larger;
+            box-shadow: 1px 1px 1px #e0e0e0;
+        }
+
+        #nav {
+            padding: 7px;
+            margin: 4px;
+        }
+
+        footer {
+            display: flex;
+            width: 1035px;
+            justify-self: center;
+            background-color: rgb(211, 211, 211);
+            margin: 20px;
+            padding: 10px;
+        }
+
+        footer>div>div>div>h4>div>ul {
+            list-style: none;
+            justify-content: space-between;
+        }
+
+        .infocolomn {
+            list-style: none;
+            justify-content: space-between;
+        }
+
+        #nav1 {
+            display: flex;
+            list-style: none;
+            color: white;
+            gap: 15px;
+            text-decoration: none;
+            align-items: end;
+            align-self: flex-end;
+            justify-content: right;
+            margin-right: 10px;
+            margin-bottom: 2px;
+        }
+
+        /* Popup CSS styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .popup-btn {
+            margin-top: 10px;
+        }
+
+        .popup-form input {
+            margin: 10px 0;
+        }
+
+      .main-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    flex-grow :1;
+}
+
+.event-card {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.event-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.details-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+          .details-btn:hover {
+    background: #0056b3;
+       }
+
+      body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f8f9fa;
+}
+
+h2 {
+    text-align: center;
+    margin-top:68px;
+}
+
+/* Main Box (Keeps Events Inside & Scrollable if Needed) */
+/*.mainbox {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    max-height: 500px; /* Adjust height as needed 
+    overflow-y: auto; /* Enables scrolling if list is long 
+    flex-grow: 1;
+}*/
+
+/* Event List Container */
+#eventList {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: -1088px;
+    height: 577px;
+    margin-top: 45px;
+    margin-right: 3px;
+    display: flex;
+    justify-content: flex-start;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
+}
+
+/* Individual Event Item */
+.event-item {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.event-img {
+    width: 80px; /* Adjust to your needs */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+/* Event Details (Text Section) */
+.event-details {
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+    
+    
+
+    </style>
+    
+  <script>
+        function fetchEvents() {
+            fetch("ViewAllEvents") // Calls the servlet
+                .then(response => response.text()) // Read the response as text (HTML content)
+                .then(data => {
+                    document.getElementById("eventList").innerHTML = data; // Insert into div
+                })
+                .catch(error => console.error("Error fetching events:", error));
+        }
+
+        window.onload = fetchEvents; // Load events when page opens
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="box">
+            <img src="logo1.png" alt="">
+            <h1>St. Mira's College For Girls, Pune</h1>
+            <br>
+            <h3>Autonomous - Affiliated to Savitribai Phule Pune University * <small
+                    style="font-weight: 100;font-size:smaller;">Undertaking</small></h3>
+        </div>
+        <div class="social">
+            <ul>
+                <li><img class="imgSocial" src="64-641423_blue-phone-logo-png-transparent-blue-phone-icon.png" alt="">
+                </li>
+                <li><img class="imgSocial" src="Logo_of_Twitter.svg.png" alt=""></li>
+                <li><img class="imgSocial" src="instagram-logo-instagram-icon-transparent-free-png.webp" alt=""></li>
+                <li><img class="imgSocial" src="aaw6si4mt.webp" alt=""></li>
+                <li><img class="imgSocial"
+                        src="red-circle-bordered-youtube-logo-with-long-shadow-on-transparent-background-free-png.webp"
+                        alt=""></li>
+            </ul>
+        </div>
+    </header>
+    <div class="Redbox"></div>
+    <div class="Bluebox">
+        <nav>
+            <ul id="nav1">
+                <li><a href="#" style="color: white;">Home</a></li>
+                <li><button id="loginButton"
+                        style="color: white; background: none; border: none; cursor: pointer;">Login</button></li>
+                <li><a href="#" style="color: white;">About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+       
+            <div class="main">
+                <div class="mainmini">
+                    <nav id="nav">Home/Notice</nav>
+                </div>
+                <div class="mainbox">
+             <!--   <h2>Upcoming Events</h2>--> 
+    <div id="eventList">Loading events...</div>
+                </div>
+              
+            </div>
+    </main>
+    <footer>
+        <div class="info">
+            <div class="row">
+                <div class="inforow">
+                    <h4>Quick Links</h4>
+                    <div class="items">
+                        <ul>
+                            <li>Home</li>
+                            <li>About Us</li>
+                            <li>Courses</li>
+                            <li>Admission</li>
+                            <li>Examination</li>
+                            <li>College In News</li>
+                            <li>Latest Update</li>
+                        </ul>
+                    </div>
+                    <div class="colomn">
+                        <div class="infocolomn">
+                            <ul>
+                                <li>Faculty</li>
+                                <li>College Activities</li>
+                                <li>Alumini</li>
+                                <li>Photo Gallery</li>
+                                <li>Video Galeery</li>
+                                <li>Contact Us</li>
+                                <li>Upcoming Events</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="add">
+                        <h3>Address</h3>
+                        <p>St. Mira's College for Girls
+                            <br> 6, Koregaon Road,
+                            <br> Pune - 411001
+                        </p>
+                        <h3>Contact Detials</h3>
+                        <br>
+                        020 2612 4846
+                        <h3>Email Id</h3>
+                        <p>mira_college@yahoo.co.in
+                            <br>info@stmirascollegepune.edu.in
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup HTML -->
+    <div class="popup-overlay">
+        <div class="popup-content">
+            <button class="close-btn">&times;</button>
+            <h2>Login</h2>
+            <form class="popup-form" action="LoginServlet" method="post">
+                <input type="text" placeholder="Username" name="username" required>
+                <br>
+                <input type="password" placeholder="Password" name="password" required>
+                <br>
+                <button class="popup-btn" type="submit" value="login" name="login">Login</button>
+                <button class="popup-btn" type="submit" value="sign-up" name="signup">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Function to show the popup
+        function showPopup() {
+            document.querySelector('.popup-overlay').style.display = 'flex';
+        }
+
+        // Show popup when clicking the login button
+        document.getElementById('loginButton').addEventListener('click', function (event) {
+            event.stopPropagation(); // Prevent triggering the body click event
+            showPopup();
+        });
+
+        // Close popup when clicking the close button
+        document.querySelector('.close-btn').addEventListener('click', function () {
+            document.querySelector('.popup-overlay').style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>

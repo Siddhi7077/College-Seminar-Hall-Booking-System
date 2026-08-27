@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #2c3e50;
+            color: white;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 22px;
+        }
+        .profile {
+            position: relative;
+            cursor: pointer;
+        }
+        .profile i {
+            font-size: 18px;
+            margin-right: 5px;
+        }
+        .profile-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: white;
+            color: black;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .profile-menu a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: black;
+            transition: 0.3s;
+        }
+        .profile-menu a:hover {
+            background: #f4f4f4;
+        }
+        .profile-menu div {
+            padding: 10px 20px;
+        }
+        .main-container {
+            display: flex;
+            height: calc(100vh - 50px);
+            margin-top: 50px;
+        }
+        .sidebar {
+            width: 250px;
+            background: #2c3e50;
+            color: white;
+            height: 100%;
+            padding-top: 20px;
+            position: fixed;
+            overflow-y: auto;
+        }
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            background: #1abc9c;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            width: calc(100% - 250px);
+            background: #f4f4f4;
+            height: 100%;
+            overflow-y: auto;
+        }
+        .section {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .form-container h2 {
+            margin-bottom: 10px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #1abc9c;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #16a085;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>Auditorium Management System</h1>
+    <div class="profile" onclick="toggleProfileMenu()">
+        <i class="fas fa-user"></i> Admin
+        <div class="profile-menu" id="profileMenu">
+            <div id="userDetails"></div>
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+            <a href="#">Logout</a>
+        </div>
+    </div>
+</div>
+<div class="main-container">
+    <div class="sidebar">
+        <a href="#" onclick="showSection('addTeacher')"><i class="fas fa-user-plus"></i> Add Teacher</a>
+        <a href="#" onclick="showSection('viewTeachers')"><i class="fas fa-users"></i> View Teachers</a>
+        <a href="#" onclick="showSection('addAuditorium')"><i class="fas fa-building"></i> Add Auditorium</a>
+        <a href="#" onclick="showSection('viewAuditoriums')"><i class="fas fa-list"></i> View Auditoriums</a>
+    </div>
+    <div class="content">
+        <div id="addTeacher" class="section active">
+            <div class="form-container">
+                <h2>Add Teacher</h2>
+                <form action="Admin1" method="post">
+                    <input type="text" name="teacherUsername" placeholder="Enter Username" required>
+                    <input type="password" name="teacherPassword" placeholder="Enter Password" required>
+                    <button type="submit">Add Teacher</button>
+                </form>
+            </div>
+        </div>
+        <div id="viewTeachers" class="section">
+            <h2>Teacher List</h2>
+            <form action="ViewTeacherServlet" method="post">
+            </form>
+            <ul>
+                <!-- Dynamic teacher list from backend -->
+            </ul>
+        </div>
+        <div id="addAuditorium" class="section">
+            <div class="form-container">
+                <h2>Add Auditorium</h2>
+                <form action="AddAuditoriumServlet" method="post" enctype="multipart/form-data">
+                    <input type="text" name="auditoriumName" placeholder="Enter Auditorium Name" required>
+                    <input type="number" name="seatCapacity" placeholder="Enter Seat Capacity" required>
+                    <input type="file" name="auditoriumMedia" required>
+                    <button type="submit">Add Auditorium</button>
+                </form>
+            </div>
+        </div>
+        <div id="ViewAuditorium" class="section">
+            <h2>Auditorium List</h2>
+            <form action="View_Auditorium.jsp" method="post">
+                <button type="submit">Load Auditorium List</button>
+            </form>
+            <ul id="auditorium_list"></ul>
+            <!-- Dynamic auditorium list from backend -->
+        </div>
+    </div>
+</div>
+<script>
+    function showSection(sectionId) {
+        document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+        document.getElementById(sectionId).classList.add('active');
+    }
+
+    function toggleProfileMenu() {
+        document.getElementById('profileMenu').classList.toggle('active');
+        displayUserDetails();
+    }
+
+    function displayUserDetails() {
+        const userDetails = document.getElementById('userDetails');
+        const username = '<%= session.getAttribute("username") %>';
+        const password = '<%= session.getAttribute("password") %>';
+        userDetails.innerHTML = `Username: ${username} <br> Password: ${password}`;
+    }
+</script>
+</body>
+</html>
